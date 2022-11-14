@@ -101,6 +101,6 @@ async function fetchFucn() {
 
   }
 }
-
+console.log(123)
 fetchFucn();
 
