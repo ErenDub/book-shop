@@ -1,7 +1,7 @@
 let basket = [];
 async function fetchFucn() {
   let fetchData = false;
-  await fetch("./json/books.json") //path to the file with json data
+  await fetch("json/books.json") //path to the file with json data
     .then((response) => {
       return response.json();
     })
