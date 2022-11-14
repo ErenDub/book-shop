@@ -67,9 +67,7 @@ footer{
     transition: background .2s;
     background: linear-gradient(0deg, rgba(15,15,15,1) 0%, rgba(15,15,15,0) 23%, rgba(15,15,15,0) 100%);
 }
-.book-item-img {
-    
-}
+
 .book-item-img img{
     width: 200px;
     height: 285px;
