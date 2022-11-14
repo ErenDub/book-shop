@@ -94,6 +94,7 @@ async function fetchFucn() {
     let elementId = element.getAttribute("id").split('add')[1];
     basket.push(fetchData[elementId])
     basketItemsBox.innerHTML = ''
+    basket.length === 0 && (basketItemsBox.innerHTML = 'Basket is empty')
     basket.map(item => {
         basketItemsBox.innerHTML += `<div class="basket-item">${item.title}</div>`
     })
@@ -101,4 +102,4 @@ async function fetchFucn() {
   }
 }
 fetchFucn();
-
+basket.length === 0 && (document.getElementById("basket-items").innerHTML = 'Basket is empty')
