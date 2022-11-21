@@ -1,7 +1,19 @@
 let basket = [];
+function fillBasket (){
+  let basketItemsBox = document.getElementById("basket-items");
+  basketItemsBox.innerHTML = ''
+  basket.length === 0 && (basketItemsBox.innerHTML = 'Basket is empty')
+  basket.map((item, i) => {
+      basketItemsBox.innerHTML += `<div id="basket${i}" class="basket-item">${item.title} - ${item.author} - $${item.price} | <button onClick="removeItem(${i})"">Remove</button></div>`
+  })
+  let total = 0 
+  basket.forEach(item => total+=item.price)
+  total !== 0 && (basketItemsBox.innerHTML += `<div class="basket-total">Total: $${total}</div>`)
+  total !== 0 && (basketItemsBox.innerHTML += `<div><a href="../orderPage/index.html"><button>Order</button></a></div>`)
+}
 async function fetchFucn() {
   let fetchData = false;
-  await fetch("json/books.json") //path to the file with json data
+  await fetch("../json/books.json") //path to the file with json data
     .then((response) => {
       return response.json();
     })
@@ -42,7 +54,7 @@ async function fetchFucn() {
                   <b>Author: </b> ${item.author}
               </div>
               <div class="book-modal-price">
-                  <b>Price: </b> ${item.price}
+                  <b>Price: </b> $${item.price}
               </div>
               <div class="book-modal-desc">
                   <b>Description: </b> ${item.description}
@@ -93,13 +105,17 @@ async function fetchFucn() {
   function addItem(element) {
     let elementId = element.getAttribute("id").split('add')[1];
     basket.push(fetchData[elementId])
-    basketItemsBox.innerHTML = ''
-    basket.length === 0 && (basketItemsBox.innerHTML = 'Basket is empty')
-    basket.map(item => {
-        basketItemsBox.innerHTML += `<div class="basket-item">${item.title}</div>`
-    })
-
+    fillBasket()
   }
+
+
+
+
 }
 fetchFucn();
 basket.length === 0 && (document.getElementById("basket-items").innerHTML = 'Basket is empty')
+function removeItem(elementId){
+  let filteredBasket = basket.filter((item, index) => index !== elementId)
+  basket = filteredBasket
+  fillBasket()
+}

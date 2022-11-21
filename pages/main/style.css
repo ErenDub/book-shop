@@ -185,3 +185,7 @@ footer{
 .basket-item{
     margin: 10px 0;
 }
+.basket-total{
+    font-weight: 600;
+    margin-bottom: 5px;
+}

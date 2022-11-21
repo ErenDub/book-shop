@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../main/style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Book Shop</title>
+  </head>
+  <body>
+    <div class="order-container">
+      <div class="order-box">
+        <div class="order-title"><h1>It`s time to confirm your order</h1>
+        
+            <div class="back-button"><a href="../main/index.html"><button>Go back</button></a></div>
+        
+        </div>
+        <hr />
+        <div class="order-form">
+          <div class="form-title">Thank you for ordering from our store</div>
+          <form class="conform-form" id="order-form-id">
+            <label>Name:</label>
+            <input type="text" placeholder="Name" />
+            <label>Surname:</label>
+            <input type="text" placeholder="Surname" />
+            <label>Delivery date:</label>
+            <input type="date" />
+            <label>Street:</label>
+            <input type="text" placeholder="Street" />
+            <label>House number:</label>
+            <input type="text" placeholder="House number" />
+            <label>Flat number:</label>
+            <input type="text" placeholder="Flat number" />
+            <div>
+                <label>Choose the payment type:</label>
+              <input type="radio" name="payment" value="cash" id="cash" />
+              <label for="cash">Cash</label>
+              <input type="radio" name="payment" value="card" id="card" />
+              <label for="card">Card</label>
+            </div>
+            <div class="form-checks">
+              <label> Choose 2 gifts:</label>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  id="gift1"
+                  name="gift1"
+                  value="pack as a gift"
+                />
+                <label for="gift1"> Pack as a gift</label>
+              </div>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  id="gift2"
+                  name="gift2"
+                  value="Add postcard"
+                />
+                <label for="gift2"> Add postcard</label>
+              </div>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  id="gift3"
+                  name="gift3"
+                  value="provide 2% discount to the next time"
+                />
+                <label for="gift3"> Provide 2% discount to the next time</label>
+              </div>
+              <div class="form-check">
+                <input
+                  type="checkbox"
+                  id="gift3"
+                  name="gift3"
+                  value="branded pen or pencil"
+                />
+                <label for="gift3"> Branded pen or pencil</label>
+              </div>
+            </div>
+            <button class="submit-button" disabled>Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>Roin Kuntchulia</footer>
+    <script src="bin.js"></script>
+  </body>
+</html>
